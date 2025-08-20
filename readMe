@@ -1,0 +1,6 @@
+In this project, I seek to create the foundation of boardgames, such as chess, checkers, and even building out mazes. 
+The first phase of the project will result in an interactive gameboard on a webpage that shows interactivity when I click on the board. 
+in the second phase of the project, I want to build out a checkers game starting from the gameboard webpage.
+In the third phase, I want to build out a chess game. 
+In the fourth phase, I would like to build out a maze generator. 
+Finally, I want to create the web home page that has a navbar to the different games along with some sort of clickable element on the center of the page that lets me nav to the respective game. 
