@@ -13,9 +13,14 @@
     <!-- you click a button indicating rock, paper, or scissors. The UI then does a countdown from 3. a robotic arm then animates 3 ticks
      and selects a random option on the 4th tick -->
     <div id="game-container">
-        <button onclick="initiateGame()" id="rock">Rock</button>
-        <button onclick="initiateGame()" id="paper">paper</button>
-        <button onclick="initiateGame()" id="scissors">scissors</button>
+        <p>your opponent is: </p>
+        <!-- add a div that houses an image of 1 of 5 opponent images. The final boss is the girl ripping through the page...-->
+         <div class="opponent">
+            <!-- <img src="" alt=""> Want to figure out how to insert an image programmatically-->
+         </div>
+        <button onclick="playRock()" id="rock">Rock</button>
+        <button onclick="playPaper()" id="paper">paper</button>
+        <button onclick="playScissors()" id="scissors">scissors</button>
         <!-- Include a count of wins, losses, and ties -->
         <div>
             <img src="/images/rock.png" id="rock-image" alt="3 pink rocks stacked on eachother biggest on bottom smallest on top" height="100px" />
