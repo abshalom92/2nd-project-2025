@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors Game</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div>
+        <h1>Play a game of Rock-Paper-Scissors!</h1>
+    </div>
+    <!-- you click a button indicating rock, paper, or scissors. The UI then does a countdown from 3. a robotic arm then animates 3 ticks
+     and selects a random option on the 4th tick -->
+    <div id="game-container">
+        <button onclick="initiateGame()" id="rock">Rock</button>
+        <button onclick="initiateGame()" id="paper">paper</button>
+        <button onclick="initiateGame()" id="scissors">scissors</button>
+        <!-- Include a count of wins, losses, and ties -->
+        <div>
+            <img src="/images/rock.png" id="rock-image" alt="3 pink rocks stacked on eachother biggest on bottom smallest on top" height="100px" />
+            <img src="/images/paper.png" id="paper-image" alt="flying sheets of white paper" height="100px"/>
+            <img src="/images/scissors.png" id="scissors-image" alt="scissors with teal handle" height="100px/">
+        </div>
+        <p>Outcome: <span id="outcome"></span></p>
+        <!-- Here we will programatically insert the outcome of the game, whether the user won lost or tied. -->
+    </div>
+</body>
+</html>
