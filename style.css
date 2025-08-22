@@ -2,6 +2,11 @@ body {
     background-color: gainsboro;
 }
 
-img {
+/* img {
     display: none;
+} */
+
+.class {
+
+    background-color: blueviolet;
 }
