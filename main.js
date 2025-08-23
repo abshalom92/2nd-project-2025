@@ -1,21 +1,25 @@
 
 
-function addImage(numb) {
-    const img = document.createElement("img");
-    const imageChoices = [
+const images = [
                             "/images/always-plays-rock.svg",
                             "/images/always-plays-paper.jpg",
                             "/images/girl-who-likes-scissors.jpg",
                             "/images/asl-fast-talker.jpg",
                             "/images/creepy-kid-looking-in.png"
                             ];
-    img.src = imageChoices[numb];
+                          
+function addImage(numb) {
+    const img = document.createElement("img");
+    img.src = images[numb];
+    console.log(images[numb]);
     //figure out how to get alt image to match
     
 }
 
 function startGame() {
-    const gameDifficulty = window.prompt("How hard do want this game? On a scale of 1 - 5")
+    const difficulty = document.getElementById('difficulty');
+     
+    // const selectDifficulty = 
     //maybe a radio button? will fifgure out tomorrow
     addImage(gameDifficulty);
 }
