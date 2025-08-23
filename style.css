@@ -10,3 +10,7 @@ body {
 
     background-color: blueviolet;
 }
+
+label{
+    display: none;
+}

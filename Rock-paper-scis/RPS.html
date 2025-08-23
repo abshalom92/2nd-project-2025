@@ -10,10 +10,20 @@
     <div>
         <h1>Play a game of Rock-Paper-Scissors!</h1>
     </div>
-    <button onclick="startGame()">PLAY</button>
-    <!--you click PLAY and it asks you what you would like to play. You click a button indicating rock, paper, 
-    or scissors. The UI then does a countdown from 3. a robotic arm then animates 3 ticks.
-     and selects a random option on the 4th tick -->
+    <div id="play-box" style="display:flex; flex-direction: column;">
+        <button onclick="startGame()" id="play-button">PLAY</button>
+        <!--you click PLAY and it asks you what you would like to play. You click a button indicating rock, paper, 
+        or scissors. The UI then does a countdown from 3. a robotic arm then animates 3 ticks.
+        and selects a random option on the 4th tick -->
+        <label for="select-difficulty" id="select-difficulty">Select your difficulty:
+            <input type="radio" name="select-difficulty" id="always-plays-rock"/>
+            <input type="radio" name="select-difficulty" id="always-plays-paper"/>
+            <input type="radio" name="select-difficulty" id="always-plays-scissors"/>
+            <input type="radio" name="select-difficulty" id="asl-fast-talker"/>
+            <input type="radio" name="select-difficulty" id="creepy-kid-looking-in"/>
+        </label>
+
+    </div>
     <div id="game-container">
         <h2>Your opponent is: </h2>
         <!-- add a div that houses an image of 1 of 5 opponent images. The final boss is the girl ripping through the page...-->
