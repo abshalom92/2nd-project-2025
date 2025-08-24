@@ -1,36 +1,56 @@
 
 
 const images = [
-                            "/images/always-plays-rock.svg",
-                            "/images/always-plays-paper.jpg",
-                            "/images/girl-who-likes-scissors.jpg",
-                            "/images/asl-fast-talker.jpg",
-                            "/images/creepy-kid-looking-in.png"
-                            ];
+                "/images/always-plays-rock.svg",
+                "/images/always-plays-paper.jpg",
+                "/images/girl-who-likes-scissors.jpg",
+                "/images/asl-fast-talker.jpg",
+                "/images/creepy-kid-looking-in.png"
+                ];
+
+document.addEventListener("DOMContentLoaded", () => {
+  const radios = document.querySelectorAll("input[name='difficulty']");
+  const preview = document.getElementById("difficulty-preview");
+  
+  radios.forEach(radio => {
+    radio.addEventListener("change", (event) => {
+      preview.src = images[event.target.value];
+    });
+  });
+});
+
+
                           
-function addImage(numb) {
-    const img = document.createElement("img");
-    img.src = images[numb];
-    document.getElementById("opponent").appendChild(img);
-    //figure out how to get alt image to match
+// function addImage(numb) {
+//     const img = document.createElement("img");
+//     img.src = images[numb];
+//     document.getElementById("opponent").appendChild(img);
+//     //figure out how to get alt image to match
     
-}
+// }
 
 function startGame() {
     // const playBoxDiv = document.getElementById("play-box");
     // const difficulty = document.createElement('h3');
     // playBoxDiv.appendChild(difficulty);
       
-    const playButton = document.getElementById("play-button");
-    const showPlayButton = playButton.style;
-    const showDifficulty = document.getElementsByName("label");
-    console.log(showDifficulty);
-    showDifficulty.style.display = "block";
-    showPlayButton.display = "none";
+    document.getElementById("play-button").style.display = "none";
+    document.getElementById("select-difficulty").style.display = "block";
+    //document.getElementById("select-difficulty").style.display = "block";
+    
+    
     
     // chooseDifficulty.
     // const imageNumber = 
     // const selectDifficulty = 
-    //maybe a radio button? will fifgure out tomorrow
+    //maybe a radio button? will figure out tomorrow
     // addImage();
 }
+
+function chooseWeapon() {
+    document.getElementById("game-container").style.display = "block";
+    document.getElementById("select-difficulty").style.visibility = "collapse";
+}
+
+//I eventually want it to be more like "press play" > pick opponent > play rock paper or scissor > your img
+//renders simultaneously as the opponents image. 

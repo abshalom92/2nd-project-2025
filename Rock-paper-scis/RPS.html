@@ -15,35 +15,61 @@
         <!--you click PLAY and it asks you what you would like to play. You click a button indicating rock, paper, 
         or scissors. The UI then does a countdown from 3. a robotic arm then animates 3 ticks.
         and selects a random option on the 4th tick -->
-        <label for="select-difficulty" id="select-difficulty">Select your difficulty:
-            <input type="radio" name="select-difficulty" id="always-plays-rock"/>
-            <input type="radio" name="select-difficulty" id="always-plays-paper"/>
-            <input type="radio" name="select-difficulty" id="always-plays-scissors"/>
-            <input type="radio" name="select-difficulty" id="asl-fast-talker"/>
-            <input type="radio" name="select-difficulty" id="creepy-kid-looking-in"/>
-        </label>
+        <div id="select-difficulty" style="display:none">
+            
+            <h3>Select your difficulty:</h3>
+            <img id="difficulty-preview" src="/images/always-plays-rock.svg" alt="Preview opponent" width="200"><br>
+
+            <input type="radio" name="difficulty" value="0" checked>Couple of stoners</input>
+            <input type="radio" name="difficulty" value="1"/>Loves karate chopping</input>
+            <input type="radio" name="difficulty" value="2"/>Scissor-lover</input>
+            <input type="radio" name="difficulty" value="3"/>Deaf sign-language master</input>
+            <input type="radio" name="difficulty" value="4"/>child looking out from the wall</input><br>
+
+            <button onclick="chooseWeapon()">Accept Opponent</button>
+        </div>
 
     </div>
-    <div id="game-container">
-        <h2>Your opponent is: </h2>
-        <!-- add a div that houses an image of 1 of 5 opponent images. The final boss is the girl ripping through the page...-->
-         <div class="opponent">
-            
-            <!-- <img src="" alt=""> Want to figure out how to insert an image programmatically-->
-         </div>
-        <button onclick="playRock()" id="rock">Rock</button>
-        <button onclick="playPaper()" id="paper">paper</button>
-        <button onclick="playScissors()" id="scissors">scissors</button>
-        <!-- Include a count of wins, losses, and ties -->
-        <div>
+
+    <div id="game-container" style="display: none;">
+        
+        <span id="rock">
+            <button onclick="playRock()" id="rock">Rock</button>
             <img src="/images/rock.png" id="rock-image" alt="3 pink rocks stacked on eachother biggest on bottom smallest on top" height="100px" />
             <!-- The rock file is kind of large @ 22mb. would like to look for a smaller file when I am cleaning up the program. -->
+        </span>
+        <span id="paper">
+            <button onclick="playPaper()" id="paper">paper</button>
             <img src="/images/paper.png" id="paper-image" alt="flying sheets of white paper" height="100px"/>
+        </span>
+        <span id="scissors">
+            <button onclick="playScissors()" id="scissors">scissors</button>
             <img src="/images/scissors.png" id="scissors-image" alt="scissors with teal handle" height="100px/">
+        </span>
+        
+        <div id="outcome-counter">
+            <!-- Include a count of wins, losses, and ties -->
         </div>
-        <p>Outcome: <span id="outcome"></span></p>
-        <!-- Here we will programatically insert the outcome of the game, whether the user won lost or tied. -->
+        <div id="game-stats">
+            <!-- tally the total games played -->
+            <!--calculate the win percentage  -->
+        </div>
     </div>  
+    <div class="battle-ground">
+        <div id="user-play">
+            <h2>You played: </h2>
+            
+            <img id="your-choice" src="" alt="What you chose." width="200"><br>
+        </div>
+        
+        <div id="opponent-play">
+            <h2>Your opponent played: </h2>
+            <img id="opponents-choice" src="" alt="What you chose." width="200"><br>
+        </div>
+    </div>
+    <p>Outcome: <span id="outcome"></span></p>
+    <!-- Here we will programatically insert the outcome of the game, whether the user won lost or tied. -->
+
     <script src="../main.js">
         
     </script>
