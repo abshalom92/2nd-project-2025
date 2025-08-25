@@ -11,7 +11,7 @@ const images = [
 document.addEventListener("DOMContentLoaded", () => {
   const radios = document.querySelectorAll("input[name='difficulty']");
   const preview = document.getElementById("difficulty-preview");
-  
+  //need to put one for the battle ground box to match what was selected earlier. 
   radios.forEach(radio => {
     radio.addEventListener("change", (event) => {
       preview.src = images[event.target.value];
@@ -48,7 +48,7 @@ function startGame() {
 }
 
 function chooseWeapon() {
-    document.getElementById("game-container").style.display = "block";
+    document.getElementById("game-container").style.display = "flex";
     document.getElementById("select-difficulty").style.visibility = "collapse";
 }
 

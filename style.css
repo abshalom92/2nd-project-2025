@@ -1,6 +1,13 @@
 body {
     background-color: gainsboro;
 }
+button:hover {
+    box-shadow: 2px 2px 2px 1px rgb(239, 8, 8), 
+                5px 5px 2px 1px rgb(255, 255, 255),
+                10px 10px 2px 1px rgb(0, 89, 255);
+    transition: all 100ms ease-in-out;
+                /* border-radius: 5px; */
+}
 
 /* img {
     display: none;
@@ -13,4 +20,19 @@ body {
 
 label{
     display: none;
+}
+
+#game-container {
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: darkcyan;
+    border-radius: 5px;
+    padding: 2rem;
+}
+
+#battleground {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* background-color: white; */
 }
