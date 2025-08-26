@@ -12,8 +12,9 @@
     </div>
     <div id="play-box" style="display:flex; flex-direction: column;">
         <button onclick="startGame()" id="play-button">PLAY</button>
-        <!--you click PLAY and it asks you what you would like to play. You click a button indicating rock, paper, 
-        or scissors. The UI then does a countdown from 3. a robotic arm then animates 3 ticks.
+        <!--you click PLAY and it asks you which opponent you would like to play with. 
+        You then click a button indicating rock, paper, or scissors. 
+        The UI then does a countdown from 3. a robotic arm then animates 3 ticks.
         and selects a random option on the 4th tick -->
         <div id="select-difficulty" style="display:none">
             
@@ -26,30 +27,37 @@
             <input type="radio" name="difficulty" value="3"/>Deaf sign-language master</input>
             <input type="radio" name="difficulty" value="4"/>child looking out from the wall</input><br>
 
-            <button onclick="chooseWeapon()">Accept Opponent</button>
+            <button onclick="chooseWeapon()">Accept Opponent</button> 
+            <button class="back-button">Go back</button>
         </div>
 
     </div>
 
     <div id="game-container" style="display: none;">
-        
-        <span id="rock">
-            <button onclick="playRock()" id="rock">Rock</button>
-            <img src="/images/rock.png" id="rock-image" alt="3 pink rocks stacked on eachother biggest on bottom smallest on top" height="100px" />
-            <!-- The rock file is kind of large @ 22mb. would like to look for a smaller file when I am cleaning up the program. -->
-        </span>
-        <span id="paper">
-            <button onclick="playPaper()" id="paper">paper</button>
-            <img src="/images/paper.png" id="paper-image" alt="flying sheets of white paper" height="100px"/>
-        </span>
-        <span id="scissors">
-            <button onclick="playScissors()" id="scissors">scissors</button>
-            <img src="/images/scissors.png" id="scissors-image" alt="scissors with teal handle" height="100px/">
-        </span>
-        
+        <h2>Which do you want to play?</h2>
+        <!-- <span>Side note, it's a secret!</span> -->
+         
+        <div id="rock-paper-scissors">
+            <span id="rock">
+                <button onclick="playRock()" id="rock">Rock</button>
+                <img src="/images/rock.png" id="rock-image" alt="3 pink rocks stacked on eachother biggest on bottom smallest on top" height="100px" />
+                <!-- The rock file is kind of large @ 22mb. would like to look for a smaller file when I am cleaning up the program. -->
+            </span>
+            <span id="paper">
+                <button onclick="playPaper()" id="paper">paper</button>
+                <img src="/images/paper.png" id="paper-image" alt="flying sheets of white paper" height="100px"/>
+            </span>
+            <span id="scissors">
+                <button onclick="playScissors()" id="scissors">scissors</button>
+                <img src="/images/scissors.png" id="scissors-image" alt="scissors with teal handle" height="100px/">
+            </span>
+        </div>
+        <button class="back-button">Go back</button>
+        <!-- will need to fix the spacing later -->
     </div>  
-    <div id="battleground" >
-        <span id="user-play">
+    <div id="battleground">
+        <div style="display:flex; flex-direction: row; justify-content: space-around;">
+            <span id="user-play">
             <h2>You played: </h2>
             
             <img id="your-choice" src="" alt="(Image of what you chose.)" width="200"><br>
@@ -59,19 +67,32 @@
             <h2>Your opponent played: </h2>
             <img id="opponents-choice" src="" alt="(Image of what your opponent chose.)" width="200"><br>
         </span>
+        </div>
+         <div id="game-outcome" style="display:flex;justify-content: center; margin: 5rem;">
+            <span id="outcome" style=" border: 0.5rem solid rgba(42, 54, 148, 0.757)">You win!/ You lose!/You tied!</span>
+                        <!-- Include a count of wins, losses, and ties -->
+            <!-- Here we will programatically insert the outcome of the game, whether the user won lost or tied. -->
+
+        </div>
     </div>
-    <!-- Here we will programatically insert the outcome of the game, whether the user won lost or tied. -->
-        <div id="outcome-counter">
-            <!-- Include a count of wins, losses, and ties -->
-                 <p>Outcome: <span id="outcome"></span></p>
-
-        </div>
-        <div id="game-stats">
-            <p>Total games played: </p><!-- tally the total games played -->
-            <p>Win percentage: </p><!--calculate the win percentage  -->
-            
-        </div>
-
+    
+    <div id="game-stats" style="display: none;">
+        <p>Total games played: </p> <!-- tally the total games played -->
+        <p>Win percentage: </p> <!--calculate the win percentage, where win percentage = total wins / total games played  -->
+        <p>Total wins: </p>
+        <p>Total losses: </p>
+        <p>Total ties: </p>
+    </div>
+    
+    
+    <footer class="footer">
+        <button id="show-stats">Hover Here to See Game Stats</button>
+        <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        </nav>
+  </footer>
     <script src="../main.js">
         
     </script>

@@ -1,6 +1,19 @@
 body {
+    display: flex;
+    flex-direction: column;
     background-color: gainsboro;
 }
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  background-color: #222;
+  color: white;
+}
+
 button:hover {
     box-shadow: 2px 2px 2px 1px rgb(239, 8, 8), 
                 5px 5px 2px 1px rgb(255, 255, 255),
@@ -23,16 +36,22 @@ label{
 }
 
 #game-container {
-    flex-direction: row;
+    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: space-around;
     background-color: darkcyan;
     border-radius: 5px;
     padding: 2rem;
+    margin: 1rem 5rem 1rem 5rem;
+
 }
 
 #battleground {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
-    /* background-color: white; */
+    background-color: darkcyan;
+    border-radius: 5px;
+    padding: 2rem;
+    margin: 1rem 5rem 1rem 5rem;
 }
