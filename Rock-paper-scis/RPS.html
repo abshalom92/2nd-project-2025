@@ -47,13 +47,6 @@
             <img src="/images/scissors.png" id="scissors-image" alt="scissors with teal handle" height="100px/">
         </span>
         
-        <div id="outcome-counter">
-            <!-- Include a count of wins, losses, and ties -->
-        </div>
-        <div id="game-stats">
-            <!-- tally the total games played -->
-            <!--calculate the win percentage  -->
-        </div>
     </div>  
     <div id="battleground" >
         <span id="user-play">
@@ -67,8 +60,17 @@
             <img id="opponents-choice" src="" alt="(Image of what your opponent chose.)" width="200"><br>
         </span>
     </div>
-    <p>Outcome: <span id="outcome"></span></p>
     <!-- Here we will programatically insert the outcome of the game, whether the user won lost or tied. -->
+        <div id="outcome-counter">
+            <!-- Include a count of wins, losses, and ties -->
+                 <p>Outcome: <span id="outcome"></span></p>
+
+        </div>
+        <div id="game-stats">
+            <p>Total games played: </p><!-- tally the total games played -->
+            <p>Win percentage: </p><!--calculate the win percentage  -->
+            
+        </div>
 
     <script src="../main.js">
         
