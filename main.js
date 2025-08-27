@@ -19,6 +19,16 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// document.addEventListener("DOMContentLoaded", () => {
+//   const buttons = document.querySelectorAll("input[name='difficulty']");
+//   const preview = document.getElementById("difficulty-preview");
+//   //need to put one for the battle ground box to match what was selected earlier. 
+//   radios.forEach(radio => {
+//     radio.addEventListener("change", (event) => {
+//       preview.src = images[event.target.value];
+//     });
+//   });
+// }); <------this is the JS logic for the battle ground and how to get my selection to show linked to my selection.
 
                           
 // function addImage(numb) {
@@ -36,21 +46,21 @@ function startGame() {
       
     document.getElementById("play-button").style.display = "none";
     document.getElementById("select-difficulty").style.display = "block";
-    //document.getElementById("select-difficulty").style.display = "block";
     
     
     
     // chooseDifficulty.
     // const imageNumber = 
     // const selectDifficulty = 
-    //maybe a radio button? will figure out tomorrow
     // addImage();
 }
 
-function chooseWeapon() {
+function acceptOpponent() {
     document.getElementById("game-container").style.display = "flex";
     document.getElementById("select-difficulty").style.visibility = "collapse";
 }
 
-//I eventually want it to be more like "press play" > pick opponent > play rock paper or scissor > your img
-//renders simultaneously as the opponents image. 
+function chooseWeapon () {
+    document.getElementById("battleground").style.display = "flex";
+    document.getElementById("game-container").style.visibility = "collapse";
+}

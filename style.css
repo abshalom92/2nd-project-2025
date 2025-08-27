@@ -3,8 +3,16 @@ body {
     flex-direction: column;
     background-color: gainsboro;
 }
+
+#title {
+    background: linear-gradient(to right,#995511, green, #115599);
+    background-clip: text;
+    color: transparent;
+    width: min(800px, 50%);
+}
+
 .footer {
-  position: fixed;
+  position: sticky;
   bottom: 0;
   left: 0;
   width: 100%;

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <div>
+    <div id="title">
         <h1>Play a game of Rock-Paper-Scissors!</h1>
     </div>
     <div id="play-box" style="display:flex; flex-direction: column;">
@@ -27,7 +27,7 @@
             <input type="radio" name="difficulty" value="3"/>Deaf sign-language master</input>
             <input type="radio" name="difficulty" value="4"/>child looking out from the wall</input><br>
 
-            <button onclick="chooseWeapon()">Accept Opponent</button> 
+            <button onclick="acceptOpponent()">Accept Opponent</button> 
             <button class="back-button">Go back</button>
         </div>
 
@@ -39,23 +39,26 @@
          
         <div id="rock-paper-scissors">
             <span id="rock">
-                <button onclick="playRock()" id="rock">Rock</button>
+                <input type="radio" name="plays" value="rock">Rock</input>
                 <img src="/images/rock.png" id="rock-image" alt="3 pink rocks stacked on eachother biggest on bottom smallest on top" height="100px" />
                 <!-- The rock file is kind of large @ 22mb. would like to look for a smaller file when I am cleaning up the program. -->
             </span>
             <span id="paper">
-                <button onclick="playPaper()" id="paper">paper</button>
+                <input type="radio" name="plays" value="paper">Paper</input>
                 <img src="/images/paper.png" id="paper-image" alt="flying sheets of white paper" height="100px"/>
             </span>
             <span id="scissors">
-                <button onclick="playScissors()" id="scissors">scissors</button>
-                <img src="/images/scissors.png" id="scissors-image" alt="scissors with teal handle" height="100px/">
+                <input type="radio" name="plays" value="scissors">Scissors</input>
+                <img src="/images/scissors.png" id="scissors-image" alt="scissors with black handle" height="100px/">
             </span>
         </div>
-        <button class="back-button">Go back</button>
+        <div>
+            <button onclick="chooseWeapon()" id="proceed-to-battleground">Finalize your play!</button>
+            <button class="back-button">Go back</button>
         <!-- will need to fix the spacing later -->
+        </div>
     </div>  
-    <div id="battleground">
+    <div id="battleground" style="display: none;">
         <div style="display:flex; flex-direction: row; justify-content: space-around;">
             <span id="user-play">
             <h2>You played: </h2>
@@ -70,7 +73,7 @@
         </div>
          <div id="game-outcome" style="display:flex;justify-content: center; margin: 5rem;">
             <span id="outcome" style=" border: 0.5rem solid rgba(42, 54, 148, 0.757)">You win!/ You lose!/You tied!</span>
-                        <!-- Include a count of wins, losses, and ties -->
+            <!-- Include a count of wins, losses, and ties -->
             <!-- Here we will programatically insert the outcome of the game, whether the user won lost or tied. -->
 
         </div>
@@ -93,6 +96,7 @@
         <a href="#">Contact</a>
         </nav>
   </footer>
+  <!-- add a way to make it stick....sticky scrolll....etc....it will all makes sense tomorrow. only sticks in one scroll direction -->
     <script src="../main.js">
         
     </script>

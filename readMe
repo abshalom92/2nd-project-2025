@@ -4,3 +4,10 @@ in the second phase of the project, I want to build out a checkers game starting
 In the third phase, I want to build out a chess game. 
 In the fourth phase, I would like to build out a maze generator. 
 Finally, I want to create the web home page that has a navbar to the different games along with some sort of clickable element on the center of the page that lets me nav to the respective game. 
+
+for 8/27/25 and beyond will need to:
+ fix the back buttons
+ add the rps logic
+ link rps radio buttons to render their respective images in the battleground div.
+ beautify radio buttons.... i.e, border radius, change shape, text bkg, etc. 
+ set up game stats hover logic/counter
