@@ -1,31 +1,32 @@
 body {
     display: flex;
     flex-direction: column;
-    background-color: gainsboro;
+    background: linear-gradient(to right, gainsboro, #b4b3b2, #474646, #171616);
+    
 }
 
 #title {
-    background: linear-gradient(to right,#995511, green, #115599);
+    background: linear-gradient(to right,#864492, green, #ff0000);
     background-clip: text;
     color: transparent;
     width: min(800px, 50%);
+    font-weight: bolder;
+    
 }
 
 .footer {
-  position: sticky;
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   text-align: center;
   padding: 1rem;
-  background-color: #222;
+  background-color: #1e0404;
   color: white;
 }
 
 button:hover {
-    box-shadow: 2px 2px 2px 1px rgb(239, 8, 8), 
-                5px 5px 2px 1px rgb(255, 255, 255),
-                10px 10px 2px 1px rgb(0, 89, 255);
+    box-shadow: 5px 5px 2px 1px rgb(0, 89, 255);
     transition: all 100ms ease-in-out;
                 /* border-radius: 5px; */
 }

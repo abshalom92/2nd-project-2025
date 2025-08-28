@@ -1,5 +1,3 @@
-
-
 const images = [
                 "/images/always-plays-rock.svg",
                 "/images/always-plays-paper.jpg",
@@ -7,11 +5,25 @@ const images = [
                 "/images/asl-fast-talker.jpg",
                 "/images/creepy-kid-looking-in.png"
                 ];
+            
+const playOptions = [
+                     "/images/rock.png",
+                     "/images/paper.png",
+                     "/images/scissors.png"
+];
+
+
+
+window.onload = function() {
+  document.querySelectorAll('input[type="radio"]').forEach(radio => {
+    radio.checked = false;
+  });
+};
 
 document.addEventListener("DOMContentLoaded", () => {
   const radios = document.querySelectorAll("input[name='difficulty']");
   const preview = document.getElementById("difficulty-preview");
-  //need to put one for the battle ground box to match what was selected earlier. 
+  //may need to put one for the battle ground box to match what was selected earlier. 
   radios.forEach(radio => {
     radio.addEventListener("change", (event) => {
       preview.src = images[event.target.value];
@@ -19,16 +31,15 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   const buttons = document.querySelectorAll("input[name='difficulty']");
-//   const preview = document.getElementById("difficulty-preview");
-//   //need to put one for the battle ground box to match what was selected earlier. 
-//   radios.forEach(radio => {
-//     radio.addEventListener("change", (event) => {
-//       preview.src = images[event.target.value];
-//     });
-//   });
-// }); <------this is the JS logic for the battle ground and how to get my selection to show linked to my selection.
+document.addEventListener("DOMContentLoaded", () => {
+  const radios = document.querySelectorAll("input[name='plays']");
+  const yourPlay = document.getElementById("your-play");
+  radios.forEach(radio => {
+    radio.addEventListener("change", (event) => {
+      yourPlay.src = playOptions[event.target.value];
+    });
+  });
+}); //<------this is the JS logic for the battle ground and how to get my selection to show linked to my selection.
 
                           
 // function addImage(numb) {
@@ -39,14 +50,10 @@ document.addEventListener("DOMContentLoaded", () => {
     
 // }
 
-function startGame() {
-    // const playBoxDiv = document.getElementById("play-box");
-    // const difficulty = document.createElement('h3');
-    // playBoxDiv.appendChild(difficulty);
-      
+function startGame() {     
     document.getElementById("play-button").style.display = "none";
     document.getElementById("select-difficulty").style.display = "block";
-    
+    document.getElementById("battleground").style.display = "none";
     
     
     // chooseDifficulty.
@@ -57,10 +64,21 @@ function startGame() {
 
 function acceptOpponent() {
     document.getElementById("game-container").style.display = "flex";
-    document.getElementById("select-difficulty").style.visibility = "collapse";
+    document.getElementById("select-difficulty").style.display = "none";
+    //need to add a null option. return "Please choose your opponent"
+    //if they press it again with no selection, 
+    // code something silly (animation, etc.) that makes fun of them for not reading the instructions.
 }
 
-function chooseWeapon () {
+function playRPS () {
     document.getElementById("battleground").style.display = "flex";
-    document.getElementById("game-container").style.visibility = "collapse";
-}
+    document.getElementById("game-container").style.display = "none";
+    const opponentDiv = document.getElementById("opponents-choice");
+    opponentDiv.src = playOptions[Math.floor(3*Math.random())];
+    //next prob to solve after 8/27 is to set up the game logic. 
+    }
+
+
+//     const userPlay = document.getElementById("your-play").value;
+//     userPlay.src = playOptions[userPlay.value]
+// ;

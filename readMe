@@ -11,3 +11,12 @@ for 8/27/25 and beyond will need to:
  link rps radio buttons to render their respective images in the battleground div.
  beautify radio buttons.... i.e, border radius, change shape, text bkg, etc. 
  set up game stats hover logic/counter
+
+completed on 8/27
+- was able to get the battleground to show my play and opponent play. 
+
+for 8/28 and beyond, will need to:
+ add the rps logic
+ fix the back buttons
+ beautify radio buttons.... i.e, border radius, change shape, text bkg, etc. 
+ set up game stats hover logic/counter
