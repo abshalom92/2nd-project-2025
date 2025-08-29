@@ -71,22 +71,31 @@ const rules = {
   scissors: "paper"
 };
 
-function playRPS () {
+
+
+function playRPS (yourPlay, opponentPlay) {
     document.getElementById("battleground").style.display = "flex";
     document.getElementById("game-container").style.display = "none";
-    
+     
     const opponentDiv = document.getElementById("opponents-choice");
-    opponentDiv.src = playOptions[Math.floor(3*Math.random())];
-    const opponentPlay = opponentDiv.src;
-    const yourPlay = document.getElementById("your-play").src;
-    // const youWonRock = yourPlay === playOptions[0] && opponentPlay ===playOptions[2];
-    // const youWonPaper = yourPlay === playOptions[1] && opponentPlay ===playOptions[0];
-    // const youWonScissors = yourPlay === playOptions[2] && opponentPlay ===playOptions[1];
-    // const tieGame = yourPlay === opponentPlay;
+    const oppPlayOption = playOptions[Math.floor(3*Math.random())];
+    opponentDiv.src = oppPlayOption
+    opponentPlay = playOptions.indexOf(oppPlayOption);
 
-    // const youWin = youWonRock || youWonPaper || youWonScissors;
-
-    // console.log(yourPlay, playOptions[0]);
+    const yourPlayImage = document.getElementById("your-play").src.split("/");
+    yourPlay = playOptions.indexOf(yourPlayImage);
+    console.log(yourPlayImage);
+    console.log(yourPlay, opponentPlay)
+    if (yourPlay === opponentPlay){
+      console.log("you tied", yourPlay, opponentPlay);
+      return "tie";
+    } else if (rules[yourPlay] === opponentPlay) {
+      console.log("you win");
+      return "win";
+    } else {
+      console.log("you lost")
+      return "lose";
+    };
 
     // if (tieGame) {
     //   console.log('Wow, you tied');
