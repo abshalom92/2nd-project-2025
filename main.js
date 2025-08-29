@@ -14,6 +14,7 @@ const playOptions = [
 
 
 
+
 window.onload = function() {
   document.querySelectorAll('input[type="radio"]').forEach(radio => {
     radio.checked = false;
@@ -64,6 +65,12 @@ function acceptOpponent() {
     // code something silly (animation, etc.) that makes fun of them for not reading the instructions.
 }
 
+const rules = {
+  rock:"scissors",
+  paper: "rock",
+  scissors: "paper"
+};
+
 function playRPS () {
     document.getElementById("battleground").style.display = "flex";
     document.getElementById("game-container").style.display = "none";
@@ -72,15 +79,15 @@ function playRPS () {
     opponentDiv.src = playOptions[Math.floor(3*Math.random())];
     const opponentPlay = opponentDiv.src;
     const yourPlay = document.getElementById("your-play").src;
-    const youWonRock = yourPlay === playOptions[0] && opponentPlay ===playOptions[2];
-    const youWonPaper = yourPlay === playOptions[1] && opponentPlay ===playOptions[0];
-    const youWonScissors = yourPlay === playOptions[2] && opponentPlay ===playOptions[1];
-    const tieGame = yourPlay === opponentPlay;
+    // const youWonRock = yourPlay === playOptions[0] && opponentPlay ===playOptions[2];
+    // const youWonPaper = yourPlay === playOptions[1] && opponentPlay ===playOptions[0];
+    // const youWonScissors = yourPlay === playOptions[2] && opponentPlay ===playOptions[1];
+    // const tieGame = yourPlay === opponentPlay;
 
-    const youWin = youWonRock || youWonPaper || youWonScissors;
+    // const youWin = youWonRock || youWonPaper || youWonScissors;
 
-    console.log(yourPlay, playOptions[0]);
-        console.log(opponentPlay);
+    // console.log(yourPlay, playOptions[0]);
+
     // if (tieGame) {
     //   console.log('Wow, you tied');
     // } else if (youWin){
