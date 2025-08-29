@@ -20,3 +20,5 @@ for 8/28 and beyond, will need to:
  fix the back buttons
  beautify radio buttons.... i.e, border radius, change shape, text bkg, etc. 
  set up game stats hover logic/counter
+
+ 8/28 - worked on manually figuring out win logic, but I can't wrap my head around it. ChatGPT gave me a few answers that made sense, but I need to redo some of the code tomorrow now that I know the answer. gotta sleep on it to bake in the knowledge.
