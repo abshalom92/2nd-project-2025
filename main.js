@@ -21,13 +21,17 @@ window.onload = function() {
   });
 };
 
+const HTMLPlaceholderVar = document.getElementById("hidden-element");
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const radios = document.querySelectorAll("input[name='difficulty']");
   const preview = document.getElementById("difficulty-preview");
   //may need to put one for the battle ground box to match what was selected earlier. 
   radios.forEach(radio => {
     radio.addEventListener("change", (event) => {
-      preview.src = images[event.target.value];
+      const selectedImage = images[event.target.value];
+      preview.src = selectedImage;
     });
   });
 });
@@ -37,7 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const yourPlay = document.getElementById("your-play");
   radios.forEach(radio => {
     radio.addEventListener("change", (event) => {
-      yourPlay.src = playOptions[event.target.value];
+      HTMLPlaceholderVar.innerText = playOptions[event.target.value];
+      yourPlay.src =  playOptions[event.target.value];
     });
   });
 }); //<------this is the JS logic for the battle ground and how to get my selection to show linked to my selection.
@@ -65,29 +70,29 @@ function acceptOpponent() {
     // code something silly (animation, etc.) that makes fun of them for not reading the instructions.
 }
 
-const rules = {
-  rock:"scissors",
-  paper: "rock",
-  scissors: "paper"
-};
+const rules = [
+  /images/rock.png: "scissors",
+  /images/paper.png:"rock",
+  /images/scissors.png: "paper"
+];
 
 
-
-function playRPS (yourPlay, opponentPlay) {
+function playRPS () {
     document.getElementById("battleground").style.display = "flex";
     document.getElementById("game-container").style.display = "none";
      
     const opponentDiv = document.getElementById("opponents-choice");
     const oppPlayOption = playOptions[Math.floor(3*Math.random())];
     opponentDiv.src = oppPlayOption
-    opponentPlay = playOptions.indexOf(oppPlayOption);
+    const opponentPlay = playOptions.indexOf(oppPlayOption);
 
-    const yourPlayImage = document.getElementById("your-play").src.split("/");
-    yourPlay = playOptions.indexOf(yourPlayImage);
-    console.log(yourPlayImage);
-    console.log(yourPlay, opponentPlay)
+    const yourPlayDiv = document.getElementById("your-play");
+    const yourPlayOption = playOptions.indexOf(HTMLPlaceholderVar.innerText);
+    const yourPlay = HTMLPlaceholderVar.innerText;
+    
+    console.log(yourPlay, rules[yourPlay]);
     if (yourPlay === opponentPlay){
-      console.log("you tied", yourPlay, opponentPlay);
+      console.log("you tied");
       return "tie";
     } else if (rules[yourPlay] === opponentPlay) {
       console.log("you win");
