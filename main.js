@@ -1,4 +1,5 @@
-const images = [
+
+const opponents = [
                 "/images/always-plays-rock.svg",
                 "/images/always-plays-paper.jpg",
                 "/images/girl-who-likes-scissors.jpg",
@@ -6,14 +7,35 @@ const images = [
                 "/images/creepy-kid-looking-in.png"
                 ];
             
-const playOptions = [
-                     "/images/rock.png",
-                     "/images/paper.png",
-                     "/images/scissors.png"
-];
-
-
-
+const choices = [
+  {
+    name: "rock",
+    image: "/images/rock.png",
+    rules: {
+      "scissors": "You win!",
+      "rock": "You tied.",
+      "paper": "You lose!"
+    } 
+  },
+  {
+    name: "paper",
+    image: "/images/paper.png",
+    rules: {
+      "scissors": "You Lose!",
+      "rock": "You win.",
+      "paper": "You tied!"
+    }  
+  },
+  {
+    name: "scissors",
+    image: "/images/scissors.png",
+    rules: {
+      "scissors": "You tied!",
+      "rock": "You lose.",
+      "paper": "You win!"
+    } 
+  },
+]
 
 window.onload = function() {
   document.querySelectorAll('input[type="radio"]').forEach(radio => {
@@ -21,7 +43,7 @@ window.onload = function() {
   });
 };
 
-const HTMLPlaceholderVar = document.getElementById("hidden-element");
+// const HTMLPlaceholderVar = document.getElementById("hidden-element");
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -30,32 +52,26 @@ document.addEventListener("DOMContentLoaded", () => {
   //may need to put one for the battle ground box to match what was selected earlier. 
   radios.forEach(radio => {
     radio.addEventListener("change", (event) => {
-      const selectedImage = images[event.target.value];
+      const selectedImage = opponents[event.target.value];
       preview.src = selectedImage;
     });
   });
-});
+}); //will need to add a layer that that tweaks the behavior of the computer.
+
+let yourChoice = null;
+const yourPlay = document.getElementById("your-play");
 
 document.addEventListener("DOMContentLoaded", () => {
   const radios = document.querySelectorAll("input[name='plays']");
-  const yourPlay = document.getElementById("your-play");
   radios.forEach(radio => {
     radio.addEventListener("change", (event) => {
-      HTMLPlaceholderVar.innerText = playOptions[event.target.value];
-      yourPlay.src =  playOptions[event.target.value];
+      yourChoice =  choices[event.target.value];
+      yourPlay.src =  yourChoice.image;
     });
   });
 }); //<------this is the JS logic for the battle ground and how to get my selection to show linked to my selection.
 
                           
-// function addImage(numb) {
-//     const img = document.createElement("img");
-//     img.src = images[numb];
-//     document.getElementById("opponent").appendChild(img);
-//     //figure out how to get alt image to match
-    
-// }
-
 function startGame() {     
     document.getElementById("play-button").style.display = "none";
     document.getElementById("select-difficulty").style.display = "block";
@@ -68,13 +84,7 @@ function acceptOpponent() {
     //need to add a null option. return "Please choose your opponent"
     //if they press it again with no selection, 
     // code something silly (animation, etc.) that makes fun of them for not reading the instructions.
-}
-
-const rules = [
-  /images/rock.png: "scissors",
-  /images/paper.png:"rock",
-  /images/scissors.png: "paper"
-];
+};
 
 
 function playRPS () {
@@ -82,37 +92,11 @@ function playRPS () {
     document.getElementById("game-container").style.display = "none";
      
     const opponentDiv = document.getElementById("opponents-choice");
-    const oppPlayOption = playOptions[Math.floor(3*Math.random())];
-    opponentDiv.src = oppPlayOption
-    const opponentPlay = playOptions.indexOf(oppPlayOption);
+    const oppPlayOption = choices[Math.floor(3*Math.random())];
+    opponentDiv.src = oppPlayOption.image;
+    const opponentPlay = oppPlayOption.name;
 
-    const yourPlayDiv = document.getElementById("your-play");
-    const yourPlayOption = playOptions.indexOf(HTMLPlaceholderVar.innerText);
-    const yourPlay = HTMLPlaceholderVar.innerText;
-    
-    console.log(yourPlay, rules[yourPlay]);
-    if (yourPlay === opponentPlay){
-      console.log("you tied");
-      return "tie";
-    } else if (rules[yourPlay] === opponentPlay) {
-      console.log("you win");
-      return "win";
-    } else {
-      console.log("you lost")
-      return "lose";
-    };
-
-    // if (tieGame) {
-    //   console.log('Wow, you tied');
-    // } else if (youWin){
-    //   console.log("You win!!");
-    // } else {
-    //   console.log("Sorry, you lost.")
-    // }
-
-    } 
-
-
-//     const userPlay = document.getElementById("your-play").value;
-//     userPlay.src = playOptions[userPlay.value]
-// ;
+    const youPlayed = yourChoice.name;
+    yourChoice.rules[opponentPlay])
+    //will need to get the result posted to the DOM when I return to this.
+  }

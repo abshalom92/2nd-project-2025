@@ -18,14 +18,14 @@
         and selects a random option on the 4th tick -->
         <div id="select-difficulty" style="display:none">
             
-            <h3>Select your difficulty:</h3>
-            <img id="difficulty-preview" src="/images/always-plays-rock.svg" alt="Preview opponent" width="200"><br>
+            <h3>Select your opponent(s):</h3>
+            <img id="difficulty-preview" src="" alt="[opponent preview]" width="200"><br>
 
             <input type="radio" name="difficulty" value="0" checked>A couple of stoners</input>
-            <input type="radio" name="difficulty" value="1"/>Loves karate chopping</input>
-            <input type="radio" name="difficulty" value="2"/>Scissor-lover</input>
-            <input type="radio" name="difficulty" value="3"/>Deaf sign-language master</input>
-            <input type="radio" name="difficulty" value="4"/>child looking out from the wall</input><br>
+            <input type="radio" name="difficulty" value="1">Loves karate chopping</input>
+            <input type="radio" name="difficulty" value="2">Scissor-lover</input>
+            <input type="radio" name="difficulty" value="3">Deaf sign-language master</input>
+            <input type="radio" name="difficulty" value="4">child looking out from the wall</input><br>
 
             <button onclick="acceptOpponent()">Accept Opponent</button> 
             <button class="back-button">Go back</button>
@@ -33,7 +33,7 @@
 
     </div>
 
-    <div id="game-container" style="display: none;">
+    <div id="game-container" style="display:none;">
         <h2>Which do you want to play?</h2>
         <!-- <span>Side note, it's a secret!</span> -->
          
@@ -51,7 +51,7 @@
                 <input type="radio" name="plays" value="2">Scissors</input>
                 <img src="/images/scissors.png" id="scissors-image" alt="scissors with black handle" height="100px/">
             </span>
-            <p id="hidden-element" style="display: none;"></p>
+            <!-- need to remember why I created this. when I do, I will add it to the readme iguess <p id="hidden-element" style="display: none;"></p> -->
         </div>
         <div>
             <button onclick="playRPS()" id="proceed-to-battleground">Finalize your play!</button>
