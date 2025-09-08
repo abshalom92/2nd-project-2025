@@ -1,4 +1,5 @@
-
+let yourChoice = null;
+const yourPlay = document.getElementById("your-play");
 const opponents = [
                 "/images/always-plays-rock.svg",
                 "/images/always-plays-paper.jpg",
@@ -58,9 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 }); //will need to add a layer that that tweaks the behavior of the computer.
 
-let yourChoice = null;
-const yourPlay = document.getElementById("your-play");
-
 document.addEventListener("DOMContentLoaded", () => {
   const radios = document.querySelectorAll("input[name='plays']");
   radios.forEach(radio => {
@@ -69,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
       yourPlay.src =  yourChoice.image;
     });
   });
-}); //<------this is the JS logic for the battle ground and how to get my selection to show linked to my selection.
+}); //JS logic for battle ground and how to get my selection to link.
 
                           
 function startGame() {     
@@ -97,6 +95,6 @@ function playRPS () {
     const opponentPlay = oppPlayOption.name;
 
     const youPlayed = yourChoice.name;
-    yourChoice.rules[opponentPlay])
+    console.log(yourChoice.rules[opponentPlay]);
     //will need to get the result posted to the DOM when I return to this.
   }
